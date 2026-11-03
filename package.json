@@ -1,0 +1,8 @@
+{
+  "name": "diana-birthday",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "bun --watch server.ts",
+    "start": "bun server.ts"
+  }
+}
