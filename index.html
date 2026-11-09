@@ -577,9 +577,10 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Dodging "No" Button (like the Valentine button)
+    // Dodging "No" Button (like the Valentine button) + Growing "Yes" button on tap/hover
     function dodgeButton() {
       const btn = document.getElementById('btn-no');
+      const yesBtn = document.getElementById('btn-yes');
       const hint = document.getElementById('dodge-hint');
       dodgeCount++;
 
@@ -595,9 +596,14 @@
       btn.innerText = texts[dodgeCount % texts.length];
 
       // Random position shift
-      const randomX = (Math.random() - 0.5) * 260;
-      const randomY = (Math.random() - 0.5) * 160;
+      const randomX = (Math.random() - 0.5) * 220;
+      const randomY = (Math.random() - 0.5) * 120;
       btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+      // Make the YES button grow bigger each time NO is tapped! (Perfect for mobile touch)
+      const newScale = Math.min(1 + (dodgeCount * 0.12), 1.6);
+      yesBtn.style.transform = `scale(${newScale})`;
+      yesBtn.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
     }
 
     // Step 1 Success -> Confetti & Next
@@ -666,3 +672,4 @@
   </script>
 </body>
 </html>
+
