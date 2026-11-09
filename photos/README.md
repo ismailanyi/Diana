@@ -11,3 +11,4 @@ Suggested filenames (or update in `index.html`):
 - (and so on up to 10)
 
 If your photos have different names (like `IMG_1234.jpg`), you can just drop them in here and we can update the `src` paths in one second.
+
